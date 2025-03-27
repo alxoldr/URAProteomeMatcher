@@ -1,0 +1,24 @@
+{
+	"IL-17R family": [
+		"IL17RA", 
+		"IL17RB", 
+		"IL17RC", 
+		"IL17RD", 
+		"IL17RE"
+	],
+	"NF-kB": [
+		"NFKB1", 
+		"NFKB2 ", 
+		"RELA", 
+		"REL", 
+		"RELB"
+	],
+	"TLR4 complex (LPS-binding)":[
+		"LY96",
+		"TLR4"
+	],
+	"AP-2 complex": [
+		"AP2A1",
+		"AP2A2"
+	]
+}
