@@ -1,0 +1,15 @@
+﻿Accession,Protein_Names,Genes,First_Protein_Description,Unique_Peptides,Mean_Intensity
+Q9NRM6,I17RB_HUMAN,IL17RB,Interleukin-17 receptor B,11,693300
+O14862,AIM2_HUMAN,AIM2,Interferon-inducible protein AIM2,12,418100
+Q9UMX1,SUFU_HUMAN,SUFU,SUFU Negative Regulator Of Hedgehog Signaling,21,15700
+P00734,THRB_HUMAN,F2,"Prothrombin, Coagulation factor II",13,122800
+P10828,THB_HUMAN,THRB ,Thyroid Hormone Receptor Beta,21,134700
+Q9Y6Y9,LY96_HUMAN,LY96,Lymphocyte Antigen 96,5,170300
+O00206;A8K1Y8,TLR4_HUMAN,TLR4,Toll Like Receptor 4,13,165700
+O75473,LGR5_HUMAN,LGR5,Leucine-rich repeat-containing G-protein coupled receptor 5,10,57700
+O95782;O94973,AP2A1_HUMAN;AP2A2_HUMAN,AP2A1;AP2A2,AP-2 complex subunit alpha-1,2,117800
+P01100,FOS_HUMAN,FOS,Transcription Factor AP-1 Subunit C-Fos,20,128300
+P15408,FOSL2_HUMAN,FOSL2,"FOS Like 2, AP-1 Transcription Factor Subunit",20,88400
+P01189,COLI_HUMAN,POMC,Proopiomelanocortin ,6,189900
+P30939;P21918,5HT1F_HUMAN;DRD5_HUMAN,HTR1F;DRD5,5-hydroxytryptamine receptor 1F,3,57300
+P04150;P10275,GCR_HUMAN;ANDR_HUMAN,NR3C1;AR,Glucocorticoid receptor,4,834500
