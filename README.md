@@ -1,6 +1,6 @@
 ### About
 
-This tool is used to search a pulldown data file for upstream regulator matches and output a CSV containing the matches.
+This tool is used to search a proteome data file for upstream regulator matches and output a CSV containing the matches.
 
 ### Setup
 
@@ -19,14 +19,14 @@ This tool is used to search a pulldown data file for upstream regulator matches 
 
 ### How-To
 ```
-usage: URAProteomeMatcher.py [-h] -pd [PULLDOWN_DATA_FILE] -ur [UPSTREAM_REGULATOR_FILE] [-ug [UPSTREAM_REGULATOR_GROUP_FILE]] [-ipn] [-ll [LOG_LEVEL]] [-lf] [-of [OUT_FILE]]
+usage: URAProteomeMatcher.py [-h] -pd [PROTEOME_DATA_FILE] -ur [UPSTREAM_REGULATOR_FILE] [-ug [UPSTREAM_REGULATOR_GROUP_FILE]] [-ipn] [-ll [LOG_LEVEL]] [-lf] [-of [OUT_FILE]]
 
 arguments
 
 options:
   -h, --help            show this help message and exit
-  -pd, --pulldown-data-file [PULLDOWN_DATA_FILE]
-                        REQUIRED: Local file path to pulldown data
+  -pd, --proteome-data-file [PROTEOME_DATA_FILE]
+                        REQUIRED: Local file path to proteome data
   -ur, --upstream-regulator-file [UPSTREAM_REGULATOR_FILE]
                         REQUIRED: Local file path to upstream regulator data
   -ug, --upstream-regulator-group-file [UPSTREAM_REGULATOR_GROUP_FILE]
@@ -40,7 +40,7 @@ options:
                         OPTIONAL: Local file to output results to
 ```
 
-Run with pulldown_data file & upstream regulator list file:
+Run with proteome_data file & upstream regulator list file:
 ```
 python ./URAProteomeMatcher.py -pd ./test_files/test_proteome.csv -ur ./test_files/test_ur_list.txt
 ```
