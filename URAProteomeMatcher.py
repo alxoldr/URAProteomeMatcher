@@ -26,7 +26,7 @@ def arg_parser():
 def main(args):
     """ Main function, parses proteome data file and adds upstream regulator matches/groups """
     # instantiate the logger and matcher
-    current_time = datetime.now().isoformat()
+    current_time = datetime.now().strftime('%Y-%m-%dT%H-%M-%S')
     logger = Logger.get_logger(args.log_level, args.log_to_file, current_time)
     matcher = URAProteomeMatcher(logger)
 
