@@ -47,10 +47,10 @@ python ./URAProteomeMatcher.py -pd ./test_files/test_proteome.csv -ur ./test_fil
 
 Run with a group data file as well:
 ```
-python ./URAProteomeMatcher.py -pd ./test_files/test_proteome.csv -ur ./test_files/test_ur_list.txt -ug ./test_files/test_groups.json
+python ./URAProteomeMatcher.py -pd ./test_files/test_proteome.csv -ur ./test_files/test_ur_tsv.txt -ug ./test_files/test_groups.json
 ```
 
 Set the log level to debug (shows table data in script run):
 ```
-python ./URAProteomeMatcher.py -pd ./test_files/test_proteome.csv -ur ./test_files/test_ur_list.txt -ll debug
+python ./URAProteomeMatcher.py -pd ./test_files/test_proteome.csv -ur ./test_files/test_ur_tsv.txt -ll debug
 ```
