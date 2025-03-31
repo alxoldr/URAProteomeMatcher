@@ -56,17 +56,31 @@ class URAProteomeMatcher():
 
     def load_upstream_regulators(self, upstream_regulator_file: str):
         """
-        Creates a list of upstream regulators to search from from a given file (containing URs seperated by newline), e.g.
+        Creates a dictionary of upstream regulators and their predicted activation states to search from using a given file, e.g.
 
-        ITAE
-        IL-17R family
-        CD5
-        THRB
-        TLR4 complex (LPS-binding)
-        GRPR
-        DRD5
-        FOS
-        TLR4
+        ╒════╤════════════════════════════╤══════════════╤═══════════╤════════════════╤═════════════════════╕
+        │    │ Upstream Regulator         │ prediction   │   z_score │ significance   │   overlapping_genes │
+        ╞════╪════════════════════════════╪══════════════╪═══════════╪════════════════╪═════════════════════╡
+        │  1 │ JUN                        │              │    -1.646 │ ***            │                  28 │
+        ├────┼────────────────────────────┼──────────────┼───────────┼────────────────┼─────────────────────┤
+        │  2 │ TLR4                       │ Activated    │     2.236 │ ***            │                  30 │
+        ├────┼────────────────────────────┼──────────────┼───────────┼────────────────┼─────────────────────┤
+        │  3 │ TLR4 complex (LPS-binding) │ Activated    │     2     │ ***            │                  27 │
+        ├────┼────────────────────────────┼──────────────┼───────────┼────────────────┼─────────────────────┤
+        │  4 │ GRPR                       │ Inhibited    │    -3.08  │ ***            │                  27 │
+        ├────┼────────────────────────────┼──────────────┼───────────┼────────────────┼─────────────────────┤
+        │  5 │ DRD5                       │ Activated    │     2.828 │ ***            │                  11 │
+        ├────┼────────────────────────────┼──────────────┼───────────┼────────────────┼─────────────────────┤
+        │  6 │ IL-17R family              │ Activated    │     2     │ **             │                  28 │
+        ├────┼────────────────────────────┼──────────────┼───────────┼────────────────┼─────────────────────┤
+        │  7 │ FOS                        │ Inhibited    │    -2.236 │ ***            │                  25 │
+        ├────┼────────────────────────────┼──────────────┼───────────┼────────────────┼─────────────────────┤
+        │  8 │ THRB                       │ Activated    │     2.067 │ *              │                  31 │
+        ├────┼────────────────────────────┼──────────────┼───────────┼────────────────┼─────────────────────┤
+        │  9 │ ITAE                       │              │     0.294 │ *              │                  14 │
+        ├────┼────────────────────────────┼──────────────┼───────────┼────────────────┼─────────────────────┤
+        │ 10 │ CXCR3                      │ Activated    │     4.329 │ *              │                  14 │
+        ╘════╧════════════════════════════╧══════════════╧═══════════╧════════════════╧═════════════════════╛
 
 
         """
@@ -186,6 +200,8 @@ class URAProteomeMatcher():
         If a match is found, the group key followed by the matched gene will get recorded in the UR_GROUP_MATCH column, e.g.
 
             IL-17R family [IL17RB]
+            
+        NOTE: if the key is NOT in the upstream regulator data (the tsv file), then it will not be matched. 
         
         """
         group_matches = {}
