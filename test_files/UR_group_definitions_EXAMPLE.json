@@ -20,5 +20,10 @@
 	"AP-2 complex": [
 		"AP2A1",
 		"AP2A2"
+	],
+	"GABAA receptor": [
+		"GABRA1","GABRA2","GABRA3","GABRA4","GABRA5",
+		"GABRB1","GABRB2","GABRB3",
+		"GABRG1","GABRG2","GABRG2"
 	]
 }
