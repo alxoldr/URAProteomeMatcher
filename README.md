@@ -1,6 +1,6 @@
 ### About
 
-This tool is used to search a proteome data file for upstream regulator matches and output a CSV containing the matches.
+This tool is used to compare a proteome data file to upstream regulator (UR) analysis results and output a CSV matching each entry in the proteome to one or more URs.
 
 ### Setup
 
@@ -26,9 +26,9 @@ arguments
 options:
   -h, --help            show this help message and exit
   -pd, --proteome-data-file [PROTEOME_DATA_FILE]
-                        REQUIRED: Local file path to proteome data
+                        REQUIRED: Local file path to proteome data (csv with a row for each entry)
   -ur, --upstream-regulator-file [UPSTREAM_REGULATOR_FILE]
-                        REQUIRED: Local file path to upstream regulator data
+                        REQUIRED: Local file path to upstream regulator data (tsv with a row for each UR)
   -ug, --upstream-regulator-group-file [UPSTREAM_REGULATOR_GROUP_FILE]
                         OPTIONAL: Local file path to json gene group file
   -ipn, --ignore-protein-name-matches
@@ -42,15 +42,15 @@ options:
 
 Run with proteome_data file & upstream regulator list file:
 ```
-python ./URAProteomeMatcher.py -pd ./test_files/test_proteome.csv -ur ./test_files/test_ur_list.txt
+python ./URAProteomeMatcher.py -pd ./test_files/test_proteome.csv -ur ./test_files/test_ur_tsv.txt
 ```
 
 Run with a group data file as well:
 ```
-python ./URAProteomeMatcher.py -pd ./test_files/test_proteome.csv -ur ./test_files/test_ur_list.txt -ug ./test_files/test_groups.json
+python ./URAProteomeMatcher.py -pd ./test_files/test_proteome.csv -ur ./test_files/test_ur_tsv.txt -ug ./test_files/test_groups.json
 ```
 
 Set the log level to debug (shows table data in script run):
 ```
-python ./URAProteomeMatcher.py -pd ./test_files/test_proteome.csv -ur ./test_files/test_ur_list.txt -ll debug
+python ./URAProteomeMatcher.py -pd ./test_files/test_proteome.csv -ur ./test_files/test_ur_tsv.txt -ll debug
 ```

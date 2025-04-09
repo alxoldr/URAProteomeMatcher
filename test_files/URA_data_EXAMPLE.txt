@@ -1,0 +1,22 @@
+Upstream Regulator	prediction	z_score	significance	overlapping_genes
+AIM2		0.703	***	4
+JUN		1.89	*	19
+GCR	Inhibited	-2.674	***	11
+JUN	Inhibited	-2.646	***	28
+VEGFA	Activated	4.243	***	5
+AP-2 complex	Activated	3.005	***	14
+EPOR	Inhibited	-2.026	***	15
+TLR4	Activated	2.236	***	30
+TLR4 complex (LPS-binding)	Activated	2	***	27
+GRPR	Inhibited	-3.08	***	27
+DRD5	Activated	2.828	***	11
+IL-17R family	Activated	2	**	28
+FOS	Activated	2.236	***	25
+POMC	Inhibited	-2.154		18
+THRB	Activated	2.067	*	31
+CXCR6		-1	***	14
+NF-kB	Activated	4.146	***	6
+ITAE		0.294	*	14
+AR	Inhibited	-2.387	**	28
+CXCR3	Activated	4.329	*	14
+GABAA receptor		-0.154	**	18
