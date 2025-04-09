@@ -5,7 +5,6 @@ import sys
 import argparse
 import traceback
 from datetime import datetime
-
 from classes.Matcher import URAProteomeMatcher
 from classes.Log import Logger
 from classes.Config import Config
@@ -25,7 +24,7 @@ def arg_parser():
 
 def main(args):
     """ Main function, parses proteome data file and adds upstream regulator matches/groups """
-    # # instantiate the logger and matcher
+    # instantiate the logger and matcher
     current_time = datetime.now().strftime('%Y-%m-%dT%H-%M-%S')
     logger = Logger.get_logger(args.log_level, args.log_to_file, current_time)
     matcher = URAProteomeMatcher(logger)
@@ -80,13 +79,13 @@ def main(args):
         prediction_data.append([';'.join(ur_em_predictions), ';'.join(ur_bm_predictions)])
     
     predic_columns = ['EXACT_MATCH_PREDIC', 'BEST_MATCH_PREDIC']
-    proteome_data_withpredicts = matcher.update_proteome_data(updated_proteome_data, predic_columns, prediction_data)  
+    proteome_data_with_predicts = matcher.update_proteome_data(updated_proteome_data, predic_columns, prediction_data)  
 
         
     # write the updated proteome data to a file
     print('\n--- write updated proteome data to file ---\n')
     out_file = os.path.abspath(args.out_file or f'URAProteomeMatcher_OUT_{current_time}.csv')
-    matcher.write_dataframe_file(proteome_data_withpredicts, out_file) 
+    matcher.write_dataframe_file(proteome_data_with_predicts, out_file) 
     return out_file
 
 def ui_main():
@@ -99,7 +98,7 @@ def ui_main():
     pd_button = create_button(frame, 'Select Proteome CSV File', get_file_path, pd_entry)
 
     ur_entry = create_entry(frame, '')
-    ur_button = create_button(frame, 'Select Upstream Regulator List', get_file_path, ur_entry)
+    ur_button = create_button(frame, 'Select Upstream Regulator Data', get_file_path, ur_entry)
 
     urg_entry = create_entry(frame, '')
     urg_button = create_button(frame, 'Select Upstream Regulator Group Reference', get_file_path, urg_entry)

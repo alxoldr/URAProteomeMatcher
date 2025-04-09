@@ -4,9 +4,10 @@ import os
 import json
 import pandas as pd
 import logging
+import re
 
 from tabulate import tabulate
-import re
+
 
 
 class URAProteomeMatcher():
@@ -101,7 +102,7 @@ class URAProteomeMatcher():
         if len(ur_data.filter(regex='predict.*').columns) == 1:
             predic_colname = ur_data.filter(regex='predict.*').columns[0]
         else:
-            Exception("predicted activation column not identified. Please ensure there is exactly one column named 'prediction'")
+            Exception("Predicted activation column not identified. Please ensure there is exactly one column named 'prediction'")
          
         #empty values in the predicted activation column mean the UR is not significant or not predicted to be act/inhib. Change to "n.s."
         ur_data.loc[ur_data[predic_colname] == ' ', predic_colname] = 'n.s.'
@@ -113,8 +114,9 @@ class URAProteomeMatcher():
         #Remove URs that are not significantly activated or inhibited (unless data contains no Activated/Inhibited URs)
         not_significant = [ur for ur,pred in upstream_regulators.items() if pred == 'n.s.']
         if len(not_significant) < len(upstream_regulators):
-            for ur in not_significant: del upstream_regulators[ur]
-            self.logger.info('THE FOLLOWING UPSTREAM REGULATORS WERE REMOVED (NOT ACTIVATED OR INHIBITED)' +  '\n - ' + '\n - '.join(not_significant))
+            for ur in not_significant: 
+                del upstream_regulators[ur]
+            self.logger.info('THE FOLLOWING UPSTREAM REGULATORS WERE REMOVED (NOT ACTIVATED OR INHIBITED)\n - ' + '\n - '.join(not_significant))
         else:
             self.logger.error('NO UPSTREAM REGULATORS RECOGNIZED AS SIGNIFICANT, SO ALL HAVE BEEN INCLUDED')
         
